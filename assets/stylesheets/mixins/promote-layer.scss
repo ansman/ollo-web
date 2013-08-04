@@ -1,0 +1,4 @@
+@mixin promote-layer {
+  // This will force webkit to promote the element to its own layer
+  @include transform(translate3d(0, 0, 0));
+}

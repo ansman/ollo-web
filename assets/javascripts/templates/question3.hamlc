@@ -1,0 +1,29 @@
+%h2
+  Who's your current favorite?
+
+.grid
+  .answer.daughter
+    .bubble
+      .checkmark
+    .play
+    .text
+      .border DAUGHTER
+  .answer.pilots
+    .bubble
+      .checkmark
+    .play
+    .text
+      .border TWENTY ONE PILOTS
+  .answer.boh
+    .bubble
+      .checkmark
+    .play
+    .text
+      .border BAND OF HORSES
+  .answer.jessie
+    .bubble
+      .checkmark
+    .play
+    .text
+      .border JESSIE WARE
+

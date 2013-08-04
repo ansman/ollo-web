@@ -1,0 +1,28 @@
+%h2
+  Who are you most excited to see?
+
+.grid
+  .answer.wavves
+    .bubble
+      .checkmark
+    .play
+    .text
+      .border WAVVES
+  .answer.angelo
+    .bubble
+      .checkmark
+    .play
+    .text
+      .border D'ANGELO
+  .answer.zedd
+    .bubble
+      .checkmark
+    .play
+    .text
+      .border ZEDD
+  .answer.national
+    .bubble
+      .checkmark
+    .play
+    .text
+      .border THE NATIONAL

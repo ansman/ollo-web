@@ -1,0 +1,4 @@
+%a{href: '/me'} My profile
+%br
+%a{href: '/logout'} Log out
+%pre= JSON.stringify(@collection.toJSON(), null, 2)

@@ -1,0 +1,301 @@
+#questions {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  min-height: 100%;
+  text-align: center;
+  top: 0;
+  left: 0;
+
+  .back {
+    padding-bottom: 10px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    .chevron {
+      @include opacity(0.1);
+      margin-top: 10px;
+    }
+  }
+
+  h2 {
+    top: 19%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 1em;
+    font-size: 16px;
+  }
+
+  .grid {
+    @include clearfix;
+    position: absolute;
+    top: 50%;
+    margin-top: -132px;
+    left: 0;
+    width: 100%;
+
+    .answer {
+      position: relative;
+      width: 50%;
+      float: left;
+      font-size: 10px;
+      margin-bottom: 20px;
+
+      &.paul .bubble {
+        background-image: image-url('artists/paul.jpg');
+      }
+
+      &.pretty .bubble {
+        background-image: image-url('artists/pretty.jpg');
+      }
+
+      &.yeahsayer .bubble {
+        background-image: image-url('artists/yeahsayer.jpg');
+      }
+
+      &.chromatics .bubble {
+        background-image: image-url('artists/chromatics.jpg');
+      }
+
+      &.wavves .bubble {
+        background-image: image-url('artists/wavves.jpg');
+      }
+
+      &.angelo .bubble {
+        background-image: image-url('artists/angelo.jpg');
+      }
+
+      &.zedd .bubble {
+        background-image: image-url('artists/zedd.jpg');
+      }
+
+      &.national .bubble {
+        background-image: image-url('artists/national.jpg');
+      }
+
+      &.daughter .bubble {
+        background-image: image-url('artists/daughter.jpg');
+      }
+
+      &.pilots .bubble {
+        background-image: image-url('artists/pilots.jpg');
+      }
+
+      &.boh .bubble {
+        background-image: image-url('artists/boh.jpg');
+      }
+
+      &.jessie .bubble {
+        background-image: image-url('artists/jessie.jpg');
+      }
+
+      &.wild-belle .bubble {
+        background-image: image-url('artists/wild.jpg');
+      }
+
+      &.blood .bubble {
+        background-image: image-url('artists/surfer.jpg');
+      }
+
+      &.heavy .bubble {
+        background-image: image-url('artists/theheavy.jpg');
+      }
+
+      &.smith .bubble {
+        background-image: image-url('artists/smith.jpg');
+      }
+
+      .bubble {
+        @include border-radius(55px);
+        @include box-sizing(border-box);
+        @include transition(border 200ms ease 200ms);
+        margin-bottom: 15px;
+        display: inline-block;
+        position: relative;
+        border: 0px solid rgba(103, 164, 241, 0.7);
+        background-origin: border-box;
+        width: 110px;
+        height: 110px;
+        background-size: 110px 110px;
+      }
+
+      .play {
+        @include at2x('sprites', 139, 60);
+        @include box-shadow(0px 1px 3px #333);
+        @include border-radius(13px);
+        width: 26px;
+        height: 26px;
+        background-position: -66px -33px;
+        position: absolute;
+        left: 50%;
+        top: 87px;
+        margin-left: 25px;
+        z-index: 3;
+
+        &.playing {
+          background-position: -92px -33px;
+        }
+      }
+
+      .checkmark {
+        @include at2x("sprites", 139, 60);
+        @include opacity(0);
+        @include transition(opacity 200ms linear);
+        width: 37px;
+        height: 28px;
+        background-position: -60px 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -14px;
+        margin-left: -18px;
+      }
+
+      .text {
+        .border {
+          @include transition(all 200ms linear);
+          border-bottom: 2px solid transparent;
+          display: inline-block;
+          padding-bottom: 5px;
+        }
+      }
+
+      &.selected {
+        .bubble {
+          @include transition-delay(0);
+          border-width: 55px;
+        }
+
+        .checkmark {
+          @include opacity(1);
+          @include transition-delay(200ms);
+        }
+
+        .text {
+          .border {
+            border-bottom-color: #333;
+          }
+        }
+      }
+    }
+  }
+
+  .indicators {
+    @include transition(all 300ms linear);
+  }
+
+  &.last-slide {
+    .indicators {
+      @include opacity(0);
+    }
+  }
+
+  .your-lineup {
+    z-index: 30;
+
+    h2 {
+      top: 13%;
+    }
+
+    ol {
+      position: absolute;
+      top: 16%;
+      left: 10%;
+      width: 80%;
+    }
+
+    li {
+      margin-bottom: 30px;
+      position: relative;
+
+      &.red {
+        color: #fc6352;
+      }
+
+      &.green {
+        color: #91ce74;
+      }
+
+      &.blue {
+        color: #3a88eb;
+      }
+
+      &.yellow {
+        color: #fb8f3b;
+      }
+    }
+
+    .bubble {
+      @include border-radius(25px);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      border: 1px solid #f4f5f0;
+      background-color: white;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    i[class^=icon] {
+      @include at2x('icons', 13px, 26px);
+      display: inline-block;
+      width: 13px;
+      height: 13px;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+
+    i.icon-stage {
+      margin-top: -4px;
+    }
+
+    i.icon-note {
+      background-position: 0 -13px;
+    }
+
+    .artist, .stage {
+      font-size: 13px;
+      text-align: left;
+      padding-left: 72px;
+    }
+
+    .artist {
+      font-weight: bold;
+      line-height: 24px;
+      padding-bottom: 1px;
+    }
+
+    .stage {
+      border-top: 1px solid #f4f5f0;
+      line-height: 24px;
+      padding-top: 3px;
+    }
+  }
+
+  .trees {
+    @include at2x('trees', 320, 135);
+    @include text-shadow(2px 2px 13px rgba(0,0,0,0.50));
+    @include box-sizing(border-box);
+    z-index: 10;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 135px;
+    padding-top: 65px;
+    font-size: 18px;
+    color: white;
+
+    .arrow {
+      @include text-shadow(none);
+      display: block;
+      margin-top: 5px;
+      font-size: 20px;
+    }
+  }
+}

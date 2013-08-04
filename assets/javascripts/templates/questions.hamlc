@@ -1,0 +1,51 @@
+.swipe
+  .swipe-wrap
+    .question!= JST['question1']()
+    .question!= JST['question2']()
+    .question!= JST['question3']()
+    .question!= JST['question4']()
+    .your-lineup
+      %h2 Your Festival Plan
+
+      %ol
+        %li.red
+          .bubble 12:00
+          .artist
+            %i.icon-note
+            SURFER BLOOD
+          .stage
+            %i.icon-stage
+            PANHANDLE STAGE
+        %li.blue
+          .bubble 14:30
+          .artist
+            %i.icon-note
+            THE HEAVY
+          .stage
+            %i.icon-stage
+            TWIN PEAKS STAGE
+        %li.green
+          .bubble 16:50
+          .artist
+            %i.icon-note
+            BAND OF HORSES
+          .stage
+            %i.icon-stage
+            SUTRO STAGE
+        %li.yellow
+          .bubble 21:00
+          .artist
+            %i.icon-note
+            PAUL MCCARTNEY
+          .stage
+            %i.icon-stage
+            LAND'S END STAGE
+      .trees
+        Save your plan &amp; find your friends
+        .arrow &#9660;
+
+
+%ul.indicators
+  - for i in _.range(5)
+    %li.indicator<
+      .overlay

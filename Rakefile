@@ -16,6 +16,9 @@ namespace :assets do
       app.css
       app.js
       jquery.js
+      *.svg
+      *.ttf
+      *.woff
       *.png
       *.ico
       *.gif

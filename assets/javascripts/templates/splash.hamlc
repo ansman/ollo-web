@@ -1,0 +1,51 @@
+.logo
+
+.swipe
+  .swipe-wrap
+    %div
+      .card
+        %h2
+          Map plans, find friends.
+    %div
+      .card
+        %h2
+          Spend time singing, not scheduling.
+    %div
+      .card
+        %h2
+          Plot your festival plans.
+    %div
+      .card
+        %h2
+          Find your friends, jam together. Let's do it!
+
+    %div
+      .card.final
+        %h2
+          %em Which days
+          are you attending the festival?
+        %ul.days
+          %li.day.day1>
+            .circle
+              .border
+              %span 1
+            .text FRIDAY
+          %li.day.day2>
+            .circle
+              .border
+              %span 2
+            .text SATURDAY
+          %li.day.day3>
+            .circle
+              .border
+              %span 3
+            .text SUNDAY
+
+%ul.indicators
+  - for i in _.range(5)
+    %li>
+      .overlay
+
+.next
+  %p Rock on
+  .chevron.down

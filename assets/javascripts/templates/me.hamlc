@@ -1,0 +1,4 @@
+%a{href: '/friends'} My friends
+%br
+%a{href: '/logout'} Log out
+%pre= JSON.stringify(@currentUser.toJSON(), null, 2)

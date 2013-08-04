@@ -1,0 +1,8 @@
+@mixin at2x($image, $width, $height) {
+  @include background-size($width + 0px, $height + 0px);
+  background-image: image-url("#{$image}.png");
+
+  @include retina {
+    background-image: image-url("#{$image}@2x.png");
+  }
+}

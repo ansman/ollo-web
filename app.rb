@@ -78,6 +78,10 @@ class App < Sinatra::Base
     # end
   end
 
+  get '/facebook-channel' do
+    haml :facebook_channel
+  end
+
   get '/*' do
     haml :home
   end

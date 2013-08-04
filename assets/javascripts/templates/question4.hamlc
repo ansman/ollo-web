@@ -1,0 +1,28 @@
+%h2
+  Take a listen, who sounds good?
+
+.grid
+  .answer.wild-belle
+    .bubble
+      .checkmark
+    .play
+    .text
+      .border WILD BELLE
+  .answer.blood
+    .bubble
+      .checkmark
+    .play
+    .text
+      .border SURFER BLOOD
+  .answer.heavy
+    .bubble
+      .checkmark
+    .play
+    .text
+      .border THE HEAVY
+  .answer.smith
+    .bubble
+      .checkmark
+    .play
+    .text
+      .border SMITH WESTERNS
