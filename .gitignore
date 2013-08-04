@@ -1,0 +1,5 @@
+.sass-cache
+*.swp
+public/assets
+.c9revisions
+tmp

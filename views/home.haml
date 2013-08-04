@@ -1,0 +1,15 @@
+!!! 5
+%html
+  %head
+    %title Outsidehacks
+    %meta{:charset => 'utf-8'}
+    -# %link{:rel => "icon", :type => "image/vnd.microsoft.icon", :href => asset_path("favicon.ico")}
+    = stylesheet_tag('app.css')
+  %body
+    - if settings.production?
+      = javascript_tag('https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js')
+    :javascript
+      window.jQuery || document.write('<script src="#{asset_path('jquery.js')}"><\/script>')
+    = javascript_tag('app.js')
+    :javascript
+      app.start();

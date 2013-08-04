@@ -1,0 +1,136 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    chunky_png (1.2.8)
+    coderay (1.0.9)
+    coffee-script (2.2.0)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.4.0)
+    commonjs (0.2.6)
+    compass (0.12.2)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
+    em-websocket (0.5.0)
+      eventmachine (>= 0.12.9)
+      http_parser.rb (~> 0.5.3)
+    eventmachine (1.0.3)
+    excon (0.25.1)
+    execjs (1.4.0)
+      multi_json (~> 1.0)
+    ffi (1.9.0)
+    formatador (0.2.4)
+    fssm (0.2.10)
+    guard (1.8.1)
+      formatador (>= 0.2.4)
+      listen (>= 1.0.0)
+      lumberjack (>= 1.0.2)
+      pry (>= 0.9.10)
+      thor (>= 0.14.6)
+    guard-livereload (1.4.0)
+      em-websocket (>= 0.5.0)
+      guard (>= 1.8.0)
+      multi_json (~> 1.7)
+    haml (4.0.3)
+      tilt
+    haml_coffee_assets (1.12.0)
+      coffee-script (>= 1.0.0)
+      sprockets (>= 2.0.3)
+      tilt (>= 1.3.3)
+    heroku-api (0.3.13)
+      excon (~> 0.25.0)
+    hike (1.2.3)
+    http_parser.rb (0.5.3)
+    json (1.8.0)
+    kgio (2.8.0)
+    less (2.3.2)
+      commonjs (~> 0.2.6)
+    libv8 (3.11.8.17)
+    listen (1.2.2)
+      rb-fsevent (>= 0.9.3)
+      rb-inotify (>= 0.9)
+      rb-kqueue (>= 0.2)
+    lumberjack (1.0.4)
+    method_source (0.8.1)
+    multi_json (1.7.7)
+    pry (0.9.12.2)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.4)
+    rack (1.5.2)
+    rack-livereload (0.3.15)
+      rack
+    rack-protection (1.5.0)
+      rack
+    rack-ssl-enforcer (0.2.5)
+    raindrops (0.11.0)
+    rake (10.1.0)
+    rake-uglifier (0.0.1)
+      rake
+      uglifier
+    rb-fsevent (0.9.3)
+    rb-inotify (0.9.0)
+      ffi (>= 0.5.0)
+    rb-kqueue (0.2.0)
+      ffi (>= 0.5.0)
+    ref (1.0.5)
+    sass (3.2.9)
+    sinatra (1.4.3)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
+    slop (3.4.5)
+    sprockets (2.10.0)
+      hike (~> 1.2)
+      multi_json (~> 1.0)
+      rack (~> 1.0)
+      tilt (~> 1.1, != 1.3.0)
+    sprockets-helpers (1.0.1)
+      sprockets (~> 2.0)
+    sprockets-less (0.5.3)
+      less (~> 2.3.0)
+      tilt (~> 1.1)
+    sprockets-sass (1.0.1)
+      sprockets (~> 2.0)
+      tilt (~> 1.1)
+    therubyracer (0.11.4)
+      libv8 (~> 3.11.8.12)
+      ref
+    thor (0.18.1)
+    tilt (1.4.1)
+    uglifier (2.1.2)
+      execjs (>= 0.3.0)
+      multi_json (~> 1.0, >= 1.0.2)
+    unicorn (4.6.3)
+      kgio (~> 2.6)
+      rack
+      raindrops (~> 0.7)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  coffee-script
+  coffee-script-source (= 1.4.0)
+  compass
+  guard-livereload
+  haml
+  haml_coffee_assets
+  heroku-api
+  json
+  less
+  rack-livereload
+  rack-ssl-enforcer
+  rake
+  rake-uglifier
+  rb-fsevent
+  sass
+  sinatra
+  sprockets
+  sprockets-helpers
+  sprockets-less
+  sprockets-sass
+  therubyracer
+  uglifier
+  unicorn
