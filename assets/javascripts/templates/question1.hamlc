@@ -5,27 +5,7 @@
   Who's a must?
 
 .grid
-  .answer.paul
-    .bubble
-      .checkmark
-    .play
-    .text
-      .border PAUL MCCARTNEY
-  .answer.pretty
-    .bubble
-      .checkmark
-    .play
-    .text
-      .border PRETTY LIGHTS
-  .answer.yeahsayer
-    .bubble
-      .checkmark
-    .play
-    .text
-      .border YEAHSAYER
-  .answer.chromatics
-    .bubble
-      .checkmark
-    .play
-    .text
-      .border CHROMATICS
+  != JST['answer'](class: 'paul', name: "Paul Mccartney")
+  != JST['answer'](class: 'pretty', name: "Pretty Lights")
+  != JST['answer'](class: 'yeahsayer', name: "Yeahsayer")
+  != JST['answer'](class: 'chromatics', name: "Chromatics")

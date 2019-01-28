@@ -110,6 +110,7 @@
     }
 
     .day {
+      @include transition(all 300ms ease-in-out);
       @include user-select(none);
       $color: #8a8a8a;
       $button-size: 50px;
@@ -154,7 +155,7 @@
       &.selected {
         .circle {
           .border {
-            border: 3px solid #fac69d;
+            border: 10px solid #fac69d;
           }
 
           span {

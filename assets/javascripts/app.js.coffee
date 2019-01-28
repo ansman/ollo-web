@@ -14,11 +14,21 @@
 window.app =
   initializers: []
   addInitializer: (func) -> app.initializers.push(func)
-  start: ->
-    _.each(@initializers, (func) -> func())
+  start: (@params) ->
+    @parseHash()
+    _.each(@initializers, (func) -> func(@params))
     Backbone.history.start(pushState: true)
+
+  parseHash: ->
+    hash = window.location.hash
+    _.each hash[1..].split('&'), (part) =>
+      [key, val] = part.split('=')
+      @params[key] = val
+
   navigate: (fragment, options={}) ->
     Backbone.history.navigate(fragment, _.defaults(options, trigger: true))
+
+  buildURL: (path) -> "#{app.config.baseURL}#{path}"
 
   show: (view) ->
     app.currentView?.close()

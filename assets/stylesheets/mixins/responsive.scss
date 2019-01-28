@@ -1,0 +1,29 @@
+$small-screens: 420px;
+$medium-screens: 470px;
+$large-screens: 510px;
+$huge-screens: 560px;
+
+@mixin small-screens {
+  @media (max-height: $medium-screens) {
+    @content;
+  }
+}
+
+@mixin large-screens {
+  @media (min-height: $large-screens) and (max-height: $huge-screens) {
+    @content;
+  }
+}
+
+@mixin huge-screens {
+  @media (min-height: $huge-screens) {
+    @content;
+  }
+}
+
+@mixin responsive($property, $small, $medium, $large, $huge) {
+  #{$property}: $medium;
+  @include small-screens { #{$property}: $small; }
+  @include large-screens { #{$property}: $large; }
+  @include huge-screens { #{$property}: $huge; }
+}

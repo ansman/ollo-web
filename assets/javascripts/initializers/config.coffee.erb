@@ -1,3 +1,6 @@
+<% domain = App.production? ? 'ollo.herokuapp.com' : 'dev.ollo.herokuapp.com' %>
 app.config =
   apiURL: 'https://olloapi.appspot.com'
-  domain: '<%= App.production? ? 'ollo.herokuapp.com' : 'dev.ollo.herokuapp.com' %>'
+  domain: '<%= domain %>'
+  baseURL: '<%= App.production? ? "https://#{domain}" : "http://#{domain}:5000" %>'
+  facebookAppID: '573758559334502'

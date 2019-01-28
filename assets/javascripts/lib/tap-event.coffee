@@ -9,15 +9,25 @@ $.fn.tap = (selector, callback) ->
 
 class TapEventHandler
   constructor: (@el, @selector, @callback) ->
-    @el.on('touchstart', @cb(@onTouchStart)...)
+    @on('touchstart', @onTouchStart)
 
-  cb: (callback) -> _.compact([@selector, callback])
+  on: (ev, func) ->
+    if @selector
+      @el.on(ev, @selector, func)
+    else
+      @el.on(ev, func)
+
+  off: (ev, func) ->
+    if @selector
+      @el.off(ev, @selector, func)
+    else
+      @el.off(ev, func)
 
   onTouchStart: (ev) =>
-    ev.preventDefault()
+    ev.stopPropagation()
     @moved = false
-    @el.on('touchmove', @cb(@onTouchMove)...)
-    @el.on('touchend', @cb(@onTouchEnd)...)
+    @on('touchmove', @onTouchMove)
+    @on('touchend', @onTouchEnd)
     return
 
   onTouchMove: =>
@@ -25,9 +35,9 @@ class TapEventHandler
     return
 
   onTouchEnd: (ev) =>
-    return if @done
-    @el.off('touchmove', @cb(@onTouchMove)...)
-    @el.off('touchend', @cb(@onTouchEnd)...)
+    ev.stopPropagation()
+    @off('touchmove', @onTouchMove)
+    @off('touchend', @onTouchEnd)
     return if @moved
     @callback(ev)
     return

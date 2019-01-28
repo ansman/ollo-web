@@ -31,23 +31,26 @@ class View.Questions extends Lib.View
     else
       @$el.addClass('last-slide')
 
-
   back: =>
     Lib.animator.back(this, @options.splash)
 
   toggleAnswer: (ev) =>
+    ev.stopPropagation()
+    ev.preventDefault()
     had = $(ev.currentTarget).is('.selected')
     @$el.find('.answer').removeClass('selected')
     $(ev.currentTarget).addClass('selected') unless had
 
   login: =>
-    FB.login ({authResponse}) ->
-      return if not authResponse
-      app.authentication.login(authResponse.accessToken).done ->
-        app.navigate('/map')
+    window.location = "https://www.facebook.com/dialog/oauth?client_id=#{app.config.facebookAppID}&redirect_uri=#{app.buildURL('/oauth-response')}&response_type=token"
+    # FB.login ({authResponse}) ->
+    #   return if not authResponse
+    #   app.authentication.login(authResponse.accessToken).done ->
+    #     app.navigate('/map')
 
   playTapped: (ev) =>
     ev.stopPropagation()
+    ev.preventDefault()
     button = $(ev.currentTarget)
     @audioXHR?.abort()
     @audio?.pause()

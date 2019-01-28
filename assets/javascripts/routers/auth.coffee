@@ -22,6 +22,7 @@ class Router.Auth extends Backbone.Router
     'me': 'me'
     'map': 'map'
     '': 'splash'
+    'oauth-response': 'oauthResponse'
 
   logout: ->
     app.authentication.logout()
@@ -41,3 +42,7 @@ class Router.Auth extends Backbone.Router
 
   map: ->
     app.show(new View.Map())
+
+  oauthResponse: ->
+    app.authentication.login(app.params.access_token).done ->
+      app.navigate('/map', replace: true)

@@ -1,0 +1,6 @@
+.answer{class: @class}
+  .bubble
+    .checkmark
+  .play
+  .text
+    .border= @name
